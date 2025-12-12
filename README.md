@@ -219,6 +219,12 @@ find ~ -name ".openshift_install.log"
 ```bash
 tail -f ~/.kcli/clusters/ocp-lab/.openshift_install.log
 ```
+**Script to manage your lab:**
+
+```bash
+chmod +x lab_ocp.sh
+./lab_ocp.sh
+```
 
 -----
 
