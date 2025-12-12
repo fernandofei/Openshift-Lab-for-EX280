@@ -28,9 +28,11 @@ This guide assumes the following specs (or similar):
 2.  Pay close attention to **User Permissions** (Run as `ROOT` vs `YOUR_USER`).
 3.  **Do not ignore Phase 4** (using `tmux`)—it saves you from connection drops.
 4. Pull Secret
-     | # Get it here: https://console.redhat.com/openshift/install/pull-secret
-     | # Action: Click "Download pull secret" and save to ~/openshift_pull.json
-     | ls -lh ~/openshift_pull.json
+ Get it here: https://console.redhat.com/openshift/install/pull-secret
+
+ Action: Click "Download pull secret" and save to ~/openshift_pull.json
+ 
+ ls -lh ~/openshift_pull.json
 
 
 
