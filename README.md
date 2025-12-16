@@ -28,11 +28,9 @@ This guide assumes the following specs (or similar):
 2.  Pay close attention to **User Permissions** (Run as `ROOT` vs `YOUR_USER`).
 3.  **Do not ignore Phase 4** (using `tmux`)—it saves you from connection drops.
 4. Pull Secret
- Get it here: https://console.redhat.com/openshift/install/pull-secret
-
- Action: Click "Download pull secret" and save to ~/openshift_pull.json
- 
- ls -lh ~/openshift_pull.json
+     | # Get it here: https://console.redhat.com/openshift/install/pull-secret
+     | # Action: Click "Download pull secret" and save to ~/openshift_pull.json
+     | ls -lh ~/openshift_pull.json
 
 
 
@@ -219,6 +217,7 @@ find ~ -name ".openshift_install.log"
 ```bash
 tail -f ~/.kcli/clusters/ocp-lab/.openshift_install.log
 ```
+
 **Script to manage your lab:**
 
 ```bash
@@ -228,7 +227,50 @@ chmod +x lab_ocp.sh
 
 -----
 
-## 🔜 Coming Soon
+**Added CHAOS SIMULATOR**
 
-  * Automated scripts for environment setup.
-  * Practice exercises for EX280.
+./chaos_training.sh
+
+A list of 20 exercises, for different topics. 
+Also, you have the answers.txt file, don't cheat, try and if you are stucked, use it.
+
+```bash
+==================================================================
+   OPENSHIFT CHAOS: PROBLEM SIMULATOR
+==================================================================
+--- NETWORKING ---
+ 1. Ghost Service
+ 2. Port Mismatch
+ 3. Named Port Typo
+ 4. Route 503
+ 5. NetPol Block
+
+--- CONFIG & STORAGE ---
+ 6. Secret Key Error
+ 7. ConfigMap Missing
+ 8. PVC Stuck Pending
+ 9. ReadOnly FS Crash
+
+--- SCHEDULING ---
+10. Quota Rejection
+11. LimitRange Rejection
+12. Affinity Stuck
+13. NodeSelector Stuck
+
+--- HEALTH & LIFECYCLE ---
+14. Liveness Loop
+15. Readiness Fail
+16. Init Crash
+17. Syntax Error
+
+--- SECURITY ---
+18. RBAC Denied
+19. SCC Forbidden
+20. Image Pull Error
+
+--- UTILS ---
+99. Clean Environment (Nuke)
+==================================================================
+```
+
+
