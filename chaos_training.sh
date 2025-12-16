@@ -409,26 +409,3 @@ esac
 
 echo -e "\n${GREEN}[ACTION]${NC} The environment is broken. Go fix it!"
 
-# ==============================================================================
-# SOLUTIONS (CHEAT SHEET)
-# ==============================================================================
-# 1. oc patch svc nginx-svc-1 -n chaos-lab --type='json' -p='[{"op": "replace", "path": "/spec/selector/app", "value":"nginx-1"}]'
-# 2. oc patch svc httpd-svc-2 -n chaos-lab --type='json' -p='[{"op": "replace", "path": "/spec/ports/0/targetPort", "value":8080}]'
-# 3. oc patch svc svc-named-port -n chaos-lab --type='json' -p='[{"op": "replace", "path": "/spec/ports/0/targetPort", "value":"web"}]'
-# 4. oc patch route nginx-route-4 -n chaos-lab --type='json' -p='[{"op": "replace", "path": "/spec/to/name", "value":"nginx-svc-4"}]'
-# 5. oc delete networkpolicy deny-all -n chaos-lab
-# 6. oc delete secret db-secret-6 -n chaos-lab; oc create secret generic db-secret-6 --from-literal=password=123 -n chaos-lab; oc delete pod app-secret-6 -n chaos-lab --force --grace-period=0
-# 7. oc create configmap missing-config-map --from-literal=config="ok" -n chaos-lab
-# 8. oc patch pvc pvc-8 -n chaos-lab -p '{"spec":{"storageClassName": null}}'
-# 9. oc set volume pod/readonly-pod-9 -n chaos-lab --add --name=run-vol --mount-path=/run/httpd --type=emptyDir
-# 10. oc delete quota strict-quota-10 -n chaos-lab
-# 11. oc delete limitrange cpu-limit-11 -n chaos-lab
-# 12. oc patch deployment alien-app-12 -n chaos-lab --type=json -p='[{"op": "remove", "path": "/spec/template/spec/affinity"}]'
-# 13. oc patch deployment taint-app-13 -n chaos-lab --type=json -p='[{"op": "remove", "path": "/spec/template/spec/nodeSelector"}]'
-# 14. oc get pod dying-pod-14 -n chaos-lab -o yaml | sed 's@path: /healthz@path: /@' | oc replace --force -f -
-# 15. oc exec unready-pod-15 -n chaos-lab -- touch /tmp/ready
-# 16. oc get pod init-fail-16 -n chaos-lab -o yaml | sed 's/exit 1/exit 0/' | oc replace --force -f -
-# 17. oc get pod cmd-fail-17 -n chaos-lab -o yaml | sed 's/"sleep 3600"/"sleep", "3600"/' | oc replace --force -f -
-# 18. oc create rolebinding viewer-binding --clusterrole=view --serviceaccount=chaos-lab:viewer-18 -n chaos-lab
-# 19. oc adm policy add-scc-to-user privileged -z default -n chaos-lab; oc delete pod root-pod-19 -n chaos-lab --force --grace-period=0
-# 20. oc set image deployment/private-app-20 private-app-20=registry.access.redhat.com/ubi8/httpd-24 -n chaos-lab
