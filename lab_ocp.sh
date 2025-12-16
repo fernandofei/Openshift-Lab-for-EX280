@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 #AUTOR:   Fernando Leitao (BigMilk)
-#HARDWARE: RHEL 9.4+ (Minimal), 256GB RAM, 40 vCPUs, SSD Dedicado.
+#HARDWARE: RHEL 9.4+ (Minimal), 256GB RAM, 40 vCPUs, 512Gb SSD.
 # To run the script, you need to elevate privileges for your user
 #
 # Save the file, change the permission and execute:
@@ -169,7 +169,7 @@ status_lab() {
 # MENU
 # ==============================================================================
 echo "============================================="
-echo "   OCP LAB MANAGER v3.1                      "
+echo "   OCP LAB MANAGER v1.0                      "
 echo "============================================="
 echo "1. Start Lab"
 echo "2. Check Status"
@@ -186,4 +186,5 @@ case $opt in
     4) stop_lab_force ;;
     5) exit 0 ;;
     *) echo "??";;
+
 esac
