@@ -273,4 +273,32 @@ Also, you have the answers.txt file, don't cheat, try and if you are stucked, us
 ==================================================================
 ```
 
+**Added REMOTE ACCESS from laptop to your Lab**
 
+Unlike standard port forwarding (-L), a SOCKS5 tunnel acts as a dynamic proxy,
+allowing your browser to resolve internal OpenShift DNS names directly through 
+the bastion host.
+
+```
+==================================================================
+   OPENSHIFT LAB: REMOTE ACCESS SETUP (SOCKS5)
+==================================================================
+--- STEP 1: OPEN TUNNEL (TERMINAL) ---
+ Command: ssh -D 1080 -q -C -N fernando@<BASTION_IP>
+ Note:    Terminal will appear to hang. Do not close it.
+          This opens a dynamic proxy on localhost:1080.
+
+--- STEP 2: CONFIGURE BROWSER (FIREFOX) ---
+ Menu:    Settings > Network Settings > Manual Proxy
+ Host:    127.0.0.1
+ Port:    1080 (Select SOCKS v5)
+ DNS:     [X] Proxy DNS when using SOCKS v5
+          ^-- (CRITICAL: Must be checked to resolve .lab domains)
+
+--- STEP 3: VERIFY CONNECTION ---
+ Target:  https://console-openshift-console.apps.ocp-lab...
+ Success: Login page loads (ignore SSL warning).
+ Failure: "Server Not Found" (Go back and fix DNS checkbox).
+==================================================================
+
+```
