@@ -284,7 +284,7 @@ the bastion host.
    OPENSHIFT LAB: REMOTE ACCESS SETUP (SOCKS5)
 ==================================================================
 --- STEP 1: OPEN TUNNEL (TERMINAL) ---
- Command: ssh -D 1080 -q -C -N fernando@<BASTION_IP>
+ Command: ssh -D 1080 -q -C -N YOUR_USER@<BASTION_IP>
  Note:    Terminal will appear to hang. Do not close it.
           This opens a dynamic proxy on localhost:1080.
 
