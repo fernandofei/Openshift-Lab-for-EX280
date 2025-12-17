@@ -17,7 +17,7 @@ This guide assumes the following specs (or similar):
 
   * **OS:** RHEL 9.4+ (Minimal Install)
   * **RAM:** 256GB
-  * **CPU:** Xeon E (40 vCPUs)
+  * **CPU:** Xeon E5-2680 v2 @ 2.80GHz (40 vCPUs) - Old but works :-)
   * **Storage:** Dedicated 512GB SSD
 
 -----
